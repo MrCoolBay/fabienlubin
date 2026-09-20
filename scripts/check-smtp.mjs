@@ -46,12 +46,12 @@ const env = { ...loadEnv(), ...process.env }
 
 // Mêmes valeurs par défaut que `runtimeConfig.smtp` dans nuxt.config.ts.
 const config = {
-  host: env.NUXT_SMTP_HOST || 'ssl0.ovh.net',
-  port: Number(env.NUXT_SMTP_PORT || '587'),
-  user: env.NUXT_SMTP_USER || 'bonjour@fabienlubin.fr',
+  host: env.NUXT_SMTP_HOST,
+  port: Number(env.NUXT_SMTP_PORT),
+  user: env.NUXT_SMTP_USER,
   // Rétro-compatibilité avec l'ancien nom de variable.
-  pass: env.NUXT_SMTP_PASS || env.SMTP_PASS || '',
-  to: env.NUXT_SMTP_TO || 'bonjour@fabienlubin.fr',
+  pass: env.NUXT_SMTP_PASS || env.SMTP_PASS,
+  to: env.NUXT_SMTP_TO,
 }
 
 console.log('Configuration résolue')
